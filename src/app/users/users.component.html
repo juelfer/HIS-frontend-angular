@@ -1,0 +1,7 @@
+<p>
+  users works!
+</p>
+<p>These are your users:</p>
+<div *ngFor="let user of userList">
+  <a [routerLink]="['/usuarios', user.uid]">{{user.name}} {{user.surname}}</a>
+</div>
