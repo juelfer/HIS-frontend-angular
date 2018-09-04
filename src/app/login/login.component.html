@@ -1,0 +1,9 @@
+<p>Inicio de sesión
+</p>
+<body>
+    <div class="loginForm">
+      Login: <input placeholder="usuario" [(ngModel)]="username"><br/>
+      Password: <input placeholder="contraseña" [(ngModel)]="password" type="password" (keyup.enter)="logUser(username,password)">
+    </div>
+  </body>
+  

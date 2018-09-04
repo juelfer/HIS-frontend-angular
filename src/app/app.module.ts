@@ -8,10 +8,16 @@ import { PatientsComponent } from './patients/patients.component';
 import { RouterModule, Routes} from '@angular/router';
 import { UsersRestService } from './users-rest.service';
 import { UserdetailComponent } from './userdetail/userdetail.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
+  {path:'', component: LoginComponent},
+  {path:'dashboard', component: DashboardComponent},
   {path:'usuarios', component: UsersComponent},
-  {path:'usuarios/:id', component: UserdetailComponent}
+  {path:'usuarios/:id', component: UserdetailComponent},
+  {path:'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -21,10 +27,13 @@ const routes: Routes = [
     UserdetailComponent,
     DoctorsComponent,
     TechnicalsComponent,
-    PatientsComponent
+    PatientsComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   exports:[

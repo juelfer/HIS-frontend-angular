@@ -1,7 +1,7 @@
 <p>
   users works!
 </p>
-<p>These are your users:</p>
+<p>(prueba) Lista de usuarios solo para ojos del admin:</p>
 <div *ngFor="let user of userList">
   <a [routerLink]="['/usuarios', user.uid]">{{user.name}} {{user.surname}}</a>
 </div>

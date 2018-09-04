@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { StateManagerService } from './state-manager.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +9,19 @@ export class UsersRestService {
     {role: 'admin', uid: '001', name: 'Todo', surname: 'Poderoso', dni: '00000001X', username: 'admin', password: '1234'},
     {role: 'doctor', uid: '002', name: 'Perico', surname: 'Menguele', dni: '32154621Y', username: 'hotdoc', password: 'doctor1'},
     {role: 'technical', uid: '003', name: 'Pepa', surname: 'Polo', dni: '56782139A', username: 'lapepa', password: 'techie'},
-    {role: 'patient', uid: '004', name: 'Lola', surname: 'Fuertes', dni: '10384653B', username: 'doloresfuertes', password: 'patient1'},
+    {role: 'patient', uid: '004', name: 'Dolores', surname: 'Fuertes', dni: '10384653B', username: 'doloresfuertes', password: 'patient1'},
     {role: 'doctor', uid: 'string', name: 'Federico', surname: 'Pitanguí', dni: '49180063H', username: 'robodoc', password: 'doctor2'}
   ]
-  constructor() { }
+
+  constructor(private stateManager: StateManagerService) { }
+  
+  logUser(username, pass) {
+    let loggedUser=this.users.find(loggedUser => loggedUser.username === username);
+    if (loggedUser.password===pass) {
+      return this.stateManager.authUser();
+    }
+  }
+
   getUserList() {
     return this.users;
   }
