@@ -18,8 +18,11 @@ export class UsersRestService {
   logUser(username, pass) {
     let loggedUser=this.users.find(loggedUser => loggedUser.username === username);
     if (loggedUser.password===pass) {
-      return this.stateManager.authUser();
+      this.stateManager.login(loggedUser);
+      this.stateManager.authUser();
+      return true;
     }
+    
   }
 
   getUserList() {

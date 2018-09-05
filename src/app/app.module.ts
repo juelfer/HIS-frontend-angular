@@ -11,12 +11,13 @@ import { UserdetailComponent } from './userdetail/userdetail.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuard } from './services/auth.guardService';
 
 const routes: Routes = [
-  {path:'', component: LoginComponent},
-  {path:'dashboard', component: DashboardComponent},
-  {path:'usuarios', component: UsersComponent},
-  {path:'usuarios/:id', component: UserdetailComponent},
+  {path:'', redirectTo: 'login', pathMatch: 'full'},
+  {path:'dashboard', component: DashboardComponent,canActivate:[AuthGuard]},
+  {path:'usuarios', component: UsersComponent, canActivate:[AuthGuard]},
+  {path:'usuarios/:id', component: UserdetailComponent,canActivate:[AuthGuard]},
   {path:'login', component: LoginComponent}
 ];
 
@@ -39,7 +40,7 @@ const routes: Routes = [
   exports:[
     RouterModule
     ],
-  providers: [UsersRestService],
+  providers: [UsersRestService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
