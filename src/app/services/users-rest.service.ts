@@ -14,6 +14,11 @@ export class UsersRestService {
     {role: 'patient', uid: '006', name: 'Angustias', surname: 'Morales', dni: '14616485F', username: 'angus', password: 'ayayay'}
   ];
 
+  histories = [
+    {userId:'004', doctorId: '002', log: ['24/2 Uñero en el dedo gordo del pie', '25/2 Uñero en el dedo gordo del otro pie']},
+    {userId:'006', doctorId: '005', log: ['5/3 Deficiencia de potasio tratada con cataplasma', '28/3 Deficiencia de potasio tratada con cataplasma', '4/4 Saturación de potasio en sangre'] }
+  ];
+
   constructor(private stateManager: StateManagerService) { }
   
   logUser(username, pass) {
@@ -36,6 +41,13 @@ export class UsersRestService {
     let list = [];
     list = this.users.filter( user => user.role === 'patient' );
     return list;
-    
+  }
+  getHistoriesList() {
+    return this.histories;
+  }
+  getHistoryDetail(id){
+    let list = [];
+    list = this.histories.filter( histories => histories.userId === id );
+    return list;
   }
 }
