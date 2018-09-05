@@ -8,7 +8,7 @@ import { StateManagerService } from '../state-manager.service';
 
         }
         canActivate() {
-            let isLogged = this.stateManager.authUser();
+            let isLogged = this.stateManager.isLogged();
             if(!isLogged){
             this.router.navigate(['login']);
             }

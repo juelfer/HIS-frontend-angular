@@ -12,7 +12,7 @@ export class StateManagerService {
 
   constructor() { }
 
-  authUser(){
+  isLogged(){
     if (this.state.auth.role){
       return this.state.auth;
       } else return false;
@@ -20,7 +20,7 @@ export class StateManagerService {
 
   login(user){
     this.state.auth= {role: user.role, surname:user.surname};
-    this.authUser();
+    this.isLogged();
   }
   verifyRole() {
     return this.state.auth && this.state.auth.role;
