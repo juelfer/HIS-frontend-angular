@@ -19,9 +19,8 @@ export class UsersRestService {
     let loggedUser=this.users.find(loggedUser => loggedUser.username === username&&loggedUser.password===pass);
     if (loggedUser) {
       this.stateManager.login(loggedUser);
-    } else {
-      alert("Datos incorrectos");
-    }
+    } 
+    
     return loggedUser;
   }
 

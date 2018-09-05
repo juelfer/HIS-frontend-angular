@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StateManagerService } from '../state-manager.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +11,14 @@ import { StateManagerService } from '../state-manager.service';
 export class DashboardComponent implements OnInit {
 
 
-  constructor(private statemanager: StateManagerService) { }
-  userrole = this.statemanager.getUserRole();
-
+  constructor(private statemanager: StateManagerService, private router: Router) { }
+  loggedUser = this.statemanager.getUser();
+  
   ngOnInit() {
+  }
+  logOut(){
+    this.statemanager.logOut();
+    this.router.navigate(['login']);
   }
 
 }
