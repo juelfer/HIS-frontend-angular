@@ -21,8 +21,8 @@ const routes: Routes = [
   {path:'usuarios', component: UsersComponent, canActivate:[AuthGuard]},
   {path:'usuarios/:id', component: UserdetailComponent},
   {path:'login', component: LoginComponent},
-  {path:'patients', component: PatientsListComponent},
-  {path:'patients/:id', component: PatientComponent}
+  {path:'patients', component: PatientsListComponent, canActivate:[AuthGuard]},
+  {path:'patients/:id', component: PatientComponent, canActivate:[AuthGuard]}
 
 ];
 
