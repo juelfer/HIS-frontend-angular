@@ -20,6 +20,7 @@ export class StateManagerService {
 
   login(user){
     this.state.auth= {role: user.role};
+    this.authUser();
   }
   getRole() {
     return this.state.auth && this.state.auth.role;

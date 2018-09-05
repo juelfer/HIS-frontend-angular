@@ -9,14 +9,19 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   authUser: any;
+  username;
+  password;
   constructor(private usersRest: UsersRestService, private router: Router) {
     ;
   }
 
-  logUser(user,pass){
-    if (this.usersRest.logUser(user,pass)) {
+  logUser(){
+    if (this.usersRest.logUser(this.username, this.password)) {
+      this.authUser=this.usersRest.logUser(this.username,this.password);
       this.router.navigate(['/dashboard']);
     };
+    this.username='';
+    this.password='';
   }
   ngOnInit() {
   }

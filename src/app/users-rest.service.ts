@@ -16,13 +16,13 @@ export class UsersRestService {
   constructor(private stateManager: StateManagerService) { }
   
   logUser(username, pass) {
-    let loggedUser=this.users.find(loggedUser => loggedUser.username === username);
-    if (loggedUser.password===pass) {
+    let loggedUser=this.users.find(loggedUser => loggedUser.username === username&&loggedUser.password===pass);
+    if (loggedUser) {
       this.stateManager.login(loggedUser);
-      this.stateManager.authUser();
-      return true;
+    } else {
+      alert("Datos incorrectos");
     }
-    
+    return loggedUser;
   }
 
   getUserList() {

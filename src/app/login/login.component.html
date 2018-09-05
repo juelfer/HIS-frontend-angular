@@ -2,8 +2,11 @@
 </p>
 <body>
     <div class="loginForm">
-      Login: <input placeholder="usuario" [(ngModel)]="username"><br/>
-      Password: <input placeholder="contraseña" [(ngModel)]="password" type="password" (keyup.enter)="logUser(username,password)">
+      <form (submit)="logUser(username,password)">
+      Login: <input placeholder="usuario" name="username" [(ngModel)]="username"><br/>
+      Password: <input placeholder="contraseña" name="password" [(ngModel)]="password" type="password">
+    <button type="submit">Entrar</button>
+  </form>
     </div>
   </body>
   
