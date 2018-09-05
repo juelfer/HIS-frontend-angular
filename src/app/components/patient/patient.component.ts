@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UsersRestService } from '../services/users-rest.service';
+import { UsersRestService } from './../../services/users-rest.service';
 
 @Component({
-  selector: 'app-userdetail',
-  templateUrl: './userdetail.component.html',
-  styleUrls: ['./userdetail.component.css']
+    selector: 'app-patient',
+    templateUrl: './patient.component.html',
+    styleUrls: ['./patient.component.css']
 })
-export class UserdetailComponent implements OnInit {
+export class PatientComponent implements OnInit {
   user: any;
   constructor(private route: ActivatedRoute, private UsersService: UsersRestService ) { }
 

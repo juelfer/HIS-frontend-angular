@@ -1,9 +1,10 @@
-
+<button (click)="logOut()">Cerrar sesión</button>
   Bienvenido/a, {{loggedUser.role}} {{loggedUser.surname}}<br/>
   <a [routerLink]="['/usuarios']"><button>Lista de pacientes</button></a><br/>
   <button>Historiales clínicos</button><br/>
   <button>Registro de usuarios</button><br/>
 
 
-<button (click)="logOut()">Cerrar sesión</button>
+
 <pre>{{loggedUser | json}}</pre>
+

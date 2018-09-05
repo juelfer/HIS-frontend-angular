@@ -4,7 +4,7 @@ import {
 } from '@angular/core';
 import {
   UsersRestService
-} from '../users-rest.service';
+} from '../services/users-rest.service';
 import {
   Router
 } from '@angular/router';
