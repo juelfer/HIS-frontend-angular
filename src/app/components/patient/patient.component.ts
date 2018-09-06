@@ -8,12 +8,12 @@ import { UsersRestService } from './../../services/users-rest.service';
     styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
-  user: any;
+  patient: any;
   constructor(private route: ActivatedRoute, private UsersService: UsersRestService ) { }
 
   ngOnInit() {
     const userDetailId = this.route.snapshot.paramMap.get('id');
-    this.user=this.UsersService.getUserDetail(userDetailId);
+    this.patient=this.UsersService.getUserDetail(userDetailId);
   }
 
 }

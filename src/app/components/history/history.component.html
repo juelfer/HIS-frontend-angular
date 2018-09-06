@@ -1,5 +1,3 @@
-<p>
-        history detail works!</p>
-        <div *ngFor="let historia of history">{{historia.userId}} {{historia.doctorId}}<br/>
-            {{historia.log}}
-         </div>
+Historial clínico del paciente: {{user.name}} {{user.surname}}
+<p> Doctor: {{doctor.name}} {{doctor.surname}}</p> 
+<div *ngFor = "let log of history.log">{{log}}</div>

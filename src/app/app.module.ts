@@ -12,7 +12,7 @@ import { AuthGuard } from './services/auth.guardService';
 import { PatientsListComponent } from './components/patients/patients-list.component';
 import { PatientComponent } from './components/patient/patient.component';
 import { HistoriesListComponent } from './components/histories/histories-list.component';
-//import { HistoryComponent } from './components/history/history.component';
+import { HistoryComponent } from './components/history/history.component';
 import { routes } from './router.config';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { routes } from './router.config';
     PatientsListComponent,
     PatientComponent,
     HistoriesListComponent,
-    //HistoryComponent,
+    HistoryComponent,
     LoginComponent,
     DashboardComponent
   ],

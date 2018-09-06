@@ -1,10 +1,10 @@
-<button (click)="logOut()">Cerrar sesión</button>
-  Bienvenido/a, {{loggedUser.role}} {{loggedUser.surname}}<br/>
+<div>
+  <span> Bienvenido/a, {{loggedUser.role}} {{loggedUser.surname}} <button (click)="logOut()">Cerrar sesión</button></span><br/><br/>
   <a [routerLink]="['/patients']"><button *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Lista de pacientes</button></a><br/>
   <a [routerLink]="['/histories']"><button *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Historiales clínicos</button></a><br/>
   <button *ngIf="loggedUser.role==='technical'||loggedUser.role==='admin'">Registro de usuarios</button><br/>
-  <button *ngIf="loggedUser.role==='patient'||loggedUser.role==='admin'">Consultar mis datos</button><br/>
-  <button *ngIf="loggedUser.role==='patient'||loggedUser.role==='admin'">Consultar mi historial</button>
+  <a [routerLink]="['/patients/', loggedUser.uid]"><button *ngIf="loggedUser.role==='patient'">Consultar mis datos</button></a><br/>
+  <a [routerLink]="['/histories/', loggedUser.uid]"><button *ngIf="loggedUser.role==='patient'">Consultar mi historial</button></a>
+</div>
 
-<pre>{{loggedUser | json}}</pre>
 

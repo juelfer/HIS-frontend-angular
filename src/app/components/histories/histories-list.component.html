@@ -1,5 +1,5 @@
-Historiales clínicos:<br/>
+<p>Historiales clínicos:</p>
 
-<div *ngFor="let historial of historiesList">
-        <a [routerLink]="['/histories', historial.userId]">{{historial.userId}} {{historial.doctorId}}</a>
-</div>
+<div *ngFor="let historial of historiesList"><div *ngFor="let patient of patients"><div *ngIf="historial.userId===patient.uid">
+        <a [routerLink]="['/histories', historial.userId]">{{patient.name}} {{patient.surname}}</a></div>
+</div></div>
