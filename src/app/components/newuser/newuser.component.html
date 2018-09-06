@@ -16,7 +16,6 @@
     <div>Nombre de usuario: <input placeholder="Nombre de usuario" name="newUserLogin" [(ngModel)]="newLogin"></div>
     <div>Contraseña: <input type="password" placeholder="Contraseña" name="newUserPass" [(ngModel)]="newPass"></div>
     <button (click)="registerUser(newRole,newId,newName,newSurname,newDNI,newSIP,newLogin,newPass)">Enviar</button>
-    <a [routerLink]="['./dashboard']"><button>Volver</button></a>
-
+    <button (click)="goBack()">Volver</button>
 </form>
 

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './../../models/user.interface';
 import { UsersRestService } from './../../services/users-rest.service';
+import {
+    Router
+  } from '@angular/router';
 
 
 @Component({
@@ -11,7 +14,7 @@ import { UsersRestService } from './../../services/users-rest.service';
 export class NewUserComponent implements OnInit {
   newUser: User = {role: 'patient', uid:'', name:'', surname:'', dni:'', username:'', password:''};
   
-  constructor( private userService: UsersRestService ) { }
+  constructor( private userService: UsersRestService, private route: Router ) { }
 
   ngOnInit() {
       
@@ -29,6 +32,10 @@ export class NewUserComponent implements OnInit {
       
       this.userService.addUser(this.newUser);  
       console.log(this.newUser);
+  }
+
+  goBack(){
+    this.route.navigate(['/dashboard']);
   }
 
 }
