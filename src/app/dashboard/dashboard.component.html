@@ -3,7 +3,7 @@
   <a [routerLink]="['/patients']"><button *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Lista de pacientes</button></a><br/>
   <a [routerLink]="['/histories']"><button *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Historiales clínicos</button></a><br/>
   <button *ngIf="loggedUser.role==='technical'||loggedUser.role==='admin'">Registro de usuarios</button><br/>
-  <button *ngIf="loggedUser.role==='patient'||loggedUser.role==='admin'">Consultar mis datos</button>
+  <button *ngIf="loggedUser.role==='patient'||loggedUser.role==='admin'">Consultar mis datos</button><br/>
   <button *ngIf="loggedUser.role==='patient'||loggedUser.role==='admin'">Consultar mi historial</button>
 
 <pre>{{loggedUser | json}}</pre>

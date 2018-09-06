@@ -8,7 +8,7 @@ import { UsersRestService } from './../../services/users-rest.service';
     styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-  history: any=[];
+  history: Array<History>=[];
   constructor(private route: ActivatedRoute, private UsersService: UsersRestService ) { }
 
   ngOnInit() {

@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { StateManagerService } from './state-manager.service';
+import { User } from './../models/user.interface';
+import { History } from './../models/history.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersRestService {
-  users = [
+  users: Array<User> = [
     {role: 'admin', uid: '001', name: 'Todo', surname: 'Poderoso', dni: '00000001X', username: 'admin', password: '1234'},
     {role: 'doctor', uid: '002', name: 'Perico', surname: 'Menguele', dni: '32154621Y', username: 'hotdoc', password: 'doctor1'},
     {role: 'technical', uid: '003', name: 'María José', surname: 'Polo', dni: '56782139A', username: 'lapepa', password: 'techie'},
@@ -14,7 +16,7 @@ export class UsersRestService {
     {role: 'patient', uid: '006', name: 'Angustias', surname: 'Morales', dni: '14616485F', username: 'angus', password: 'ayayay'}
   ];
 
-  histories = [
+  histories: Array<History> = [
     {userId:'004', doctorId: '002', log: ['24/2 Uñero en el dedo gordo del pie', '25/2 Uñero en el dedo gordo del otro pie']},
     {userId:'006', doctorId: '005', log: ['5/3 Deficiencia de potasio tratada con cataplasma', '28/3 Deficiencia de potasio tratada con cataplasma', '4/4 Saturación de potasio en sangre'] }
   ];
