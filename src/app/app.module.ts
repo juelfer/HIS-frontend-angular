@@ -14,6 +14,7 @@ import { PatientComponent } from './components/patient/patient.component';
 import { HistoriesListComponent } from './components/histories/histories-list.component';
 import { HistoryComponent } from './components/history/history.component';
 import { routes } from './router.config';
+import { NewUserComponent } from './components/newuser/newuser.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { routes } from './router.config';
     HistoriesListComponent,
     HistoryComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NewUserComponent
   ],
   imports: [
     BrowserModule,

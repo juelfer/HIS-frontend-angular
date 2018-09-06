@@ -50,4 +50,7 @@ export class UsersRestService {
   getHistoryDetail(id){
     return this.histories.find( histories => histories.userId === id );
   }
+  addUser(newuser:User){
+    this.users.push(newuser);
+  }
 }

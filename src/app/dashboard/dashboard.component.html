@@ -2,9 +2,10 @@
   <span> Bienvenido/a, {{loggedUser.role}} {{loggedUser.surname}} <button (click)="logOut()">Cerrar sesión</button></span><br/><br/>
   <a [routerLink]="['/patients']"><button *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Lista de pacientes</button></a><br/>
   <a [routerLink]="['/histories']"><button *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Historiales clínicos</button></a><br/>
-  <button *ngIf="loggedUser.role==='technical'||loggedUser.role==='admin'">Registro de usuarios</button><br/>
-  <a [routerLink]="['/patients/', loggedUser.uid]"><button *ngIf="loggedUser.role==='patient'">Consultar mis datos</button></a><br/>
-  <a [routerLink]="['/histories/', loggedUser.uid]"><button *ngIf="loggedUser.role==='patient'">Consultar mi historial</button></a>
+  <a [routerLink]="['/newuser']"><button *ngIf="loggedUser.role==='technical'||loggedUser.role==='admin'">Registro de usuarios</button></a><br/>
+  <a [routerLink]="['/patient/', loggedUser.uid]"><button *ngIf="loggedUser.role==='patient'">Consultar mis datos</button></a><br/>
+  <a [routerLink]="['/history/', loggedUser.uid]"><button *ngIf="loggedUser.role==='patient'">Consultar mi historial</button></a><br/>
+  <a [routerLink]="['/usuarios']"><button *ngIf="loggedUser.role==='admin'">Ver todos los usuarios</button></a>
 </div>
 
 

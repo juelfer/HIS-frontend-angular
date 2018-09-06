@@ -1,15 +1,22 @@
 <p>Alta de usuarios: </p>
 
 <form>
-    <div>rol:</div> 
-    </div>ID: <input placeholder="Código de usuario" name="newUserId" [(ngModel)]="newId"></div>
-    </div>Nombre: <input></div>
-    <div>Apellidos: <input></div>
-    <div>DNI: <input></div>
-    <div>SIP: <input></div> <!--Lleva ngIf para que detecte si es paciente-->
+    <div>Tipo de usuario:<select name="newRole" [(ngModel)]="newRole">
+                <option value='patient'>Paciente</option> 
+                <option value='doctor'>Médico</option> 
+                <option value='technical'>Administrativo</option>
+              </select><!--<input placeholder="Tipo de usuario" name="newUserRole" [(ngModel)]="newRole">-->
+    </div> 
+    <div>ID: <input placeholder="Código de usuario" name="newUserId" [(ngModel)]="newId"></div>
+    <div>Nombre: <input placeholder="Nombre" name="newUserName" [(ngModel)]="newName"></div>
+    <div>Apellidos: <input placeholder="Apellidos" name="newUserSurname" [(ngModel)]="newSurname"></div>
+    <div>DNI: <input placeholder="DNI" name="newUserDNI" [(ngModel)]="newDNI"></div>
+    <div>SIP: <input placeholder="SIP" name="newUserSIP" [(ngModel)]="newSIP"></div> <!--Lleva ngIf para que detecte si es paciente-->
 
-    <div>Nombre de usuario: <input></div>
-    <div>Contraseña: <input></div>
+    <div>Nombre de usuario: <input placeholder="Nombre de usuario" name="newUserLogin" [(ngModel)]="newLogin"></div>
+    <div>Contraseña: <input type="password" placeholder="Contraseña" name="newUserPass" [(ngModel)]="newPass"></div>
+    <button (click)="registerUser(newRole,newId,newName,newSurname,newDNI,newSIP,newLogin,newPass)">Enviar</button>
+    <a [routerLink]="['./dashboard']"><button>Volver</button></a>
 
 </form>
 
