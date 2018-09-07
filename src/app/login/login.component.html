@@ -1,13 +1,12 @@
-<p>Inicio de sesión
-</p>
-<body>
-    <div class="loginForm">
-      <form (submit)="logUser(username,password)">
-      Login: <input placeholder="usuario" name="username" [(ngModel)]="username"><br/>
-      Password: <input placeholder="contraseña" name="password" [(ngModel)]="password" type="password">
-    <button type="submit">Entrar</button>
-  </form>
-  <div *ngIf="error">{{error}}</div>
-    </div>
-  </body>
+<div class="loginContainer">
+  Inicio de sesión
   
+  <div class="loginForm">
+    <form (submit)="logUser(username,password)">
+      <span>Login: <input placeholder="usuario" name="username" [(ngModel)]="username"></span><br />
+      <span>Password: <input placeholder="contraseña" name="password" [(ngModel)]="password" type="password"></span>
+      <button type="submit">Entrar</button>
+    </form>
+    <div *ngIf="error">{{error}}</div>
+  </div>
+</div>

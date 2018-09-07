@@ -1,5 +1,5 @@
 <p>Datos del paciente:</p>
 
-<div *ngFor="let patient of patientsList">
+<div class="patientsContainer" *ngFor="let patient of patientsList">
         <a [routerLink]="['/patient', patient.uid]">{{patient.name}} {{patient.surname}}</a>
 </div>

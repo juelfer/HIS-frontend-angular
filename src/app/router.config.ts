@@ -20,5 +20,5 @@ export const routes: Routes = [
     {path:'patient/:id', component: PatientComponent, canActivate:[AuthGuard]},
     {path:'histories', component: HistoriesListComponent, canActivate:[AuthGuard]},
     {path:'history/:id', component: HistoryComponent, canActivate:[AuthGuard]},
-    {path:'newuser', component: NewUserComponent, /*canActivate:[AuthGuard]*/}
+    {path:'newuser', component: NewUserComponent, canActivate:[AuthGuard]}
   ];

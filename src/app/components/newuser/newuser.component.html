@@ -1,5 +1,5 @@
 <p>Alta de usuarios: </p>
-
+<div class="registerContainer">
 <form>
     <div>Tipo de usuario:<select name="newRole" [(ngModel)]="newRole">
                 <option value='patient'>Paciente</option> 
@@ -18,4 +18,5 @@
     <button (click)="registerUser(newRole,newId,newName,newSurname,newDNI,newSIP,newLogin,newPass)">Enviar</button>
     <button (click)="goBack()">Volver</button>
 </form>
+</div>
 

@@ -20,7 +20,4 @@ export class DashboardComponent implements OnInit {
     this.statemanager.logOut();
     this.router.navigate(['login']);
   }
-
-  
-
 }

@@ -1,0 +1,17 @@
+.loginContainer{
+    background-color: aquamarine;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.loginForm{
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10em;
+}
+
+.loginForm form span{
+    margin-top: 2em;
+}
