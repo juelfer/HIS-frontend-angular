@@ -2,4 +2,6 @@
 
 <div *ngFor="let historial of historiesList"><div *ngFor="let patient of patients" class="historiesContainer"><div *ngIf="historial.userId===patient.uid">
         <a [routerLink]="['/history', historial.userId]">{{patient.name}} {{patient.surname}}</a></div>
-</div></div>
+</div>
+</div>
+<button (click)="goBack()">Atrás</button>

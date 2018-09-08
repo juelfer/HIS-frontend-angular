@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersRestService } from './../../services/users-rest.service';
 import { History } from './../../models/history.interface';
-import { Patient } from './../../models/patient.interface';
-
+import { User } from './../../models/user.interface';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-historiesslist',
@@ -12,9 +12,9 @@ import { Patient } from './../../models/patient.interface';
 export class HistoriesListComponent implements OnInit {
     historiesList: Array<History>;
     // users: Array<User>;
-    patients: Array<Patient>;
+    patients: Array<User>;
 
-    constructor(private usersService: UsersRestService) { 
+    constructor(private usersService: UsersRestService, private location: Location) { 
         this.historiesList=this.usersService.getHistoriesList();
         this.patients=this.usersService.getPatientsList();
         // this.users=this.usersService.getUserList();
@@ -30,5 +30,7 @@ export class HistoriesListComponent implements OnInit {
     }
     ngOnInit() {
     }
-  
+    goBack(){
+        this.location.back();
+      }
 }

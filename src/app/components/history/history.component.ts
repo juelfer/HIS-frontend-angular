@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { UsersRestService } from './../../services/users-rest.service';
 import { User } from './../../models/user.interface';
 import { History } from './../../models/history.interface';
+import { Location } from '@angular/common';
 
 @Component({
     selector: 'app-history',
@@ -13,7 +14,7 @@ export class HistoryComponent implements OnInit {
   history: History;
   user: any;
   doctor: User;
-  constructor(private route: ActivatedRoute, private UsersService: UsersRestService ) { }
+  constructor(private route: ActivatedRoute, private UsersService: UsersRestService, private location: Location ) { }
 
   ngOnInit() {
     const historyDetailId = this.route.snapshot.paramMap.get('id');
@@ -21,5 +22,7 @@ export class HistoryComponent implements OnInit {
     this.user=this.UsersService.getUserDetail(historyDetailId);
     this.doctor=this.UsersService.getUserDetail(this.history.doctorId);
   }
-
+  goBack(){
+    this.location.back();
+  }
 }

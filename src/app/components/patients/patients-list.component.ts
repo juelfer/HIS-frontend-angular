@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersRestService } from './../../services/users-rest.service';
-import { Patient } from './../../models/patient.interface';
+import { User } from './../../models/user.interface';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-patientslist',
@@ -8,11 +9,13 @@ import { Patient } from './../../models/patient.interface';
   styleUrls: ['./patients-list.component.css']
 })
 export class PatientsListComponent implements OnInit {
-    patientsList: Array<Patient>;
-    constructor(private usersService: UsersRestService) { 
+    patientsList: Array<User>;
+    constructor(private usersService: UsersRestService, private location: Location) { 
         this.patientsList=this.usersService.getPatientsList();
     }
     ngOnInit() {
     }
-  
+  goBack(){
+    this.location.back();
+  }
 }
