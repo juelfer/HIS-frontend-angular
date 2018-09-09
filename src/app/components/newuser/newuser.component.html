@@ -1,22 +1,22 @@
-<p>Alta de usuarios: </p>
-<div class="registerContainer">
-<form>
-    <div>Tipo de usuario:<select name="newRole" [(ngModel)]="newRole">
-                <option value='patient'>Paciente</option> 
-                <option value='doctor'>Médico</option> 
-                <option value='technical'>Administrativo</option>
-              </select><!--<input placeholder="Tipo de usuario" name="newUserRole" [(ngModel)]="newRole">-->
-    </div> 
-    <div>ID: <input placeholder="Código de usuario" name="newUserId" [(ngModel)]="newId"></div>
-    <div>Nombre: <input placeholder="Nombre" name="newUserName" [(ngModel)]="newName"></div>
-    <div>Apellidos: <input placeholder="Apellidos" name="newUserSurname" [(ngModel)]="newSurname"></div>
-    <div>DNI: <input placeholder="DNI" name="newUserDNI" [(ngModel)]="newDNI"></div>
-    <div>SIP: <input placeholder="SIP" name="newUserSIP" [(ngModel)]="newSIP"></div> <!--Lleva ngIf para que detecte si es paciente-->
-
-    <div>Nombre de usuario: <input placeholder="Nombre de usuario" name="newUserLogin" [(ngModel)]="newLogin"></div>
-    <div>Contraseña: <input type="password" placeholder="Contraseña" name="newUserPass" [(ngModel)]="newPass"></div>
-    <button (click)="registerUser(newRole,newId,newName,newSurname,newDNI,newSIP,newLogin,newPass)">Enviar</button>
-    <button (click)="goBack()">Atrás</button>
-</form>
+<h1>Alta de usuarios</h1>
+<div class="registerForm">
+  <form>
+    <div class="enterData">Tipo de usuario: <select name="newRole" [(ngModel)]="newRole"><br/>
+        <option value='patient'>Paciente</option>
+        <option value='doctor'>Médico</option>
+        <option value='technical'>Administrativo</option>
+      </select>
+    </div>
+    <div class="enterData">ID: <input class="registerInput" placeholder="Código de usuario" name="newUserId" [(ngModel)]="newId"></div>
+    <div class="enterData">Nombre: <input class="registerInput" placeholder="Nombre" name="newUserName" [(ngModel)]="newName"></div>
+    <div class="enterData">Apellidos: <input class="registerInput" placeholder="Apellidos" name="newUserSurname" [(ngModel)]="newSurname"></div>
+    <div class="enterData">DNI: <input class="registerInput" placeholder="DNI" name="newUserDNI" [(ngModel)]="newDNI"></div>
+    <div class="enterData">Nombre de usuario: <input class="registerInput" placeholder="Nombre de usuario" name="newUserLogin"
+        [(ngModel)]="newLogin"></div>
+    <div class="enterData">Contraseña: <input class="registerInput" type="password" placeholder="Contraseña" name="newUserPass"
+        [(ngModel)]="newPass"></div>
+  </form>
 </div>
-
+<div class="buttons"><div class="register" (click)="registerUser(newRole,newId,newName,newSurname,newDNI,newLogin,newPass)">Enviar</div>
+  <div class="back" (click)="goBack()">Atrás</div>
+</div>

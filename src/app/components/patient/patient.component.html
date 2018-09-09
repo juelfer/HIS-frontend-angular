@@ -1,9 +1,8 @@
-<p>Lista de pacientes: </p>
+<h1>Datos del paciente</h1>
 <div class="patientContainer">
-    <p>ID: {{patient.uid}} ({{patient.role}})</p> 
+    <p>ID: {{patient.uid}}</p> 
     <p>Nombre: {{patient.name}}</p>
     <p>Apellidos: {{patient.surname}}</p>
     <p>DNI: {{patient.dni}}</p>
-    <p>SIP: {{patient.sip}}</p>
 </div>
-<button (click)="goBack()">Atrás</button>
+<div class="back" (click)="goBack()">Atrás</div>

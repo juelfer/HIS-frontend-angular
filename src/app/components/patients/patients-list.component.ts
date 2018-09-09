@@ -11,9 +11,10 @@ import { Location } from '@angular/common';
 export class PatientsListComponent implements OnInit {
     patientsList: Array<User>;
     constructor(private usersService: UsersRestService, private location: Location) { 
-        this.patientsList=this.usersService.getPatientsList();
+        // this.patientsList=this.usersService.getPatientsList();
     }
     ngOnInit() {
+      this.patientsList=this.usersService.getPatientsList();
     }
   goBack(){
     this.location.back();

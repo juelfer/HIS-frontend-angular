@@ -1,4 +1,5 @@
-Historial clínico del paciente: {{user.name}} {{user.surname}}
-<p> Doctor: {{doctor.name}} {{doctor.surname}}</p> 
-<div class="historyContainer" *ngFor = "let log of history.log">{{log}}</div>
-<button (click)="goBack()">Atrás</button>
+<h1>Historial clínico de {{user.name}} {{user.surname}}</h1>
+<div class="historyContainer"> <p> Doctor: {{doctor.name}} {{doctor.surname}}</p> 
+
+<div class="historyLog" *ngFor = "let log of history.log"><p>{{log}}</p></div></div>
+<div class="back" (click)="goBack()">Atrás</div>

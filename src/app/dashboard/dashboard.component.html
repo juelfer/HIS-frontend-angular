@@ -1,11 +1,11 @@
 <div class="dashboardContainer">
-  <span> Bienvenido/a, {{loggedUser.role}} {{loggedUser.surname}} <button (click)="logOut()">Cerrar sesión</button></span><br/><br/>
-  <a [routerLink]="['/patients']"><button *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Lista de pacientes</button></a><br/>
-  <a [routerLink]="['/histories']"><button *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Historiales clínicos</button></a><br/>
-  <a [routerLink]="['/newuser']"><button *ngIf="loggedUser.role==='technical'||loggedUser.role==='admin'">Registro de usuarios</button></a><br/>
-  <a [routerLink]="['/patient/', loggedUser.uid]"><button *ngIf="loggedUser.role==='patient'">Consultar mis datos</button></a><br/>
-  <a [routerLink]="['/history/', loggedUser.uid]"><button *ngIf="loggedUser.role==='patient'">Consultar mi historial</button></a><br/>
-  <a [routerLink]="['/usuarios']"><button *ngIf="loggedUser.role==='admin'">Ver todos los usuarios</button></a>
+  <span> Bienvenido/a, {{loggedUser.role}} {{loggedUser.surname}} <button (click)="logOut()">Cerrar sesión</button></span><br /><br />
+  <div class="optionsContainer">
+    <div class="option"><a [routerLink]="['/patients']"><label *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Lista de pacientes</label></a><br /></div>
+    <div class="option"><a [routerLink]="['/histories']"><label *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Historiales clínicos</label></a><br /></div>
+    <div class="option"><a [routerLink]="['/newuser']"><label *ngIf="loggedUser.role==='technical'||loggedUser.role==='admin'">Registro de usuarios</label></a><br /></div>
+    <div class="option"><a [routerLink]="['/patient/', loggedUser.uid]"><label *ngIf="loggedUser.role==='patient'">Consultar mis datos</label></a><br /></div>
+    <div class="option"><a [routerLink]="['/history/', loggedUser.uid]"><label *ngIf="loggedUser.role==='patient'">Consultar mi historial</label></a><br /></div>
+    <div class="option"><a [routerLink]="['/usuarios']"><label *ngIf="loggedUser.role==='admin'">Ver todos los usuarios</label></a></div>
+  </div>
 </div>
-
-

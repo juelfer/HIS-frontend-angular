@@ -17,7 +17,7 @@ export class NewUserComponent implements OnInit {
       
   }
 
-  registerUser(newRole,newId,newName,newSurname,newDNI,newSIP,newLogin,newPass){
+  registerUser(newRole,newId,newName,newSurname,newDNI,newLogin,newPass){
       this.newUser.role = newRole;
       this.newUser.uid = newId;
       this.newUser.name = newName;

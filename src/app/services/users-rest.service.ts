@@ -48,7 +48,7 @@ export class UsersRestService {
     
   }
 
-  patients = this.userList.filter ( user => user.role === 'patient' );
+  // patients = this.userList.filter ( user => user.role === 'patient' );
 
   // ngOnInit () {
     // let user = {uid: 'string', role: 'string', username: 'string', password: 'string'};
@@ -99,11 +99,11 @@ export class UsersRestService {
   }
 
   getPatientsList() {
-    return this.patients;
+    return this.userList.filter( user => user.role === 'patient');
   }
 
   getPatientDetail(id) {
-    return this.patients.find( patient => patient.uid === id );
+    return this.userList.find( user => user.uid === id );
   }
 
   getHistoriesList() {
@@ -114,5 +114,6 @@ export class UsersRestService {
   }
   addUser(newuser:User){
     this.userList.push(newuser);
+    alert("Nuevo usuario registrado");
   }
 }

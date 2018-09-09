@@ -15,8 +15,8 @@ export class HistoriesListComponent implements OnInit {
     patients: Array<User>;
 
     constructor(private usersService: UsersRestService, private location: Location) { 
-        this.historiesList=this.usersService.getHistoriesList();
-        this.patients=this.usersService.getPatientsList();
+        // this.historiesList=this.usersService.getHistoriesList();
+        // this.patients=this.usersService.getPatientsList();
         // this.users=this.usersService.getUserList();
        
         // for (let history of this.historiesList) {
@@ -29,6 +29,8 @@ export class HistoriesListComponent implements OnInit {
 
     }
     ngOnInit() {
+        this.historiesList=this.usersService.getHistoriesList();
+        this.patients=this.usersService.getPatientsList();
     }
     goBack(){
         this.location.back();

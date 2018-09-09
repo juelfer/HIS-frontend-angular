@@ -1,6 +1,11 @@
-<p>Datos del paciente:</p>
-
-<div class="patientsContainer" *ngFor="let patient of patientsList">
-        <a [routerLink]="['/patient', patient.uid]">{{patient.name}} {{patient.surname}}</a>
-</div>
-<button (click)="goBack()">Atrás</button>
+<h1>Lista de pacientes</h1>
+<!-- <div class="patientsContainer"> -->
+  <div class="patientsList">
+    <div class="patient" *ngFor="let patient of patientsList">
+      <a [routerLink]="['/patient', patient.uid]">
+        <div class="patientDetail">{{patient.name}} {{patient.surname}}</div>
+      </a>
+    </div>
+  </div>
+<!-- </div> -->
+<div class="back" (click)="goBack()">Atrás</div>
