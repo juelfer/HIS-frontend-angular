@@ -15,6 +15,7 @@ import { HistoriesListComponent } from './components/histories/histories-list.co
 import { HistoryComponent } from './components/history/history.component';
 import { routes } from './router.config';
 import { NewUserComponent } from './components/newuser/newuser.component';
+import { StatebarComponent } from './components/statebar/statebar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewUserComponent } from './components/newuser/newuser.component';
     HistoryComponent,
     LoginComponent,
     DashboardComponent,
-    NewUserComponent
+    NewUserComponent,
+    StatebarComponent
   ],
   imports: [
     BrowserModule,

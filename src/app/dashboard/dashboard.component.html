@@ -1,5 +1,6 @@
+<app-statebar></app-statebar>
 <div class="dashboardContainer">
-  <span> Bienvenido/a, {{loggedUser.role}} {{loggedUser.surname}} <button (click)="logOut()">Cerrar sesión</button></span><br /><br />
+  <!-- <span> Bienvenido/a, {{loggedUser.role}} {{loggedUser.surname}} <button (click)="logOut()">Cerrar sesión</button></span><br /><br /> -->
   <div class="optionsContainer">
     <div class="option"><a [routerLink]="['/patients']"><label *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Lista de pacientes</label></a><br /></div>
     <div class="option"><a [routerLink]="['/histories']"><label *ngIf="loggedUser.role==='doctor'||loggedUser.role==='admin'">Historiales clínicos</label></a><br /></div>
