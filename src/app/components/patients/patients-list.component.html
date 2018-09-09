@@ -1,13 +1,11 @@
 <app-statebar></app-statebar>
 
 <h1>Lista de pacientes</h1>
-<!-- <div class="patientsContainer"> -->
-  <div class="patientsList">
-    <div class="patient" *ngFor="let patient of patientsList">
-      <a [routerLink]="['/patient', patient.uid]">
-        <div class="patientDetail">{{patient.name}} {{patient.surname}}</div>
-      </a>
-    </div>
+<div class="patientsList">
+  <div class="patient" *ngFor="let patient of patientsList">
+    <a [routerLink]="['/patient', patient.uid]">
+      <div class="patientDetail">{{patient.name}} {{patient.surname}}</div>
+    </a>
   </div>
-<!-- </div> -->
+</div>
 <div class="back" (click)="goBack()">Atrás</div>

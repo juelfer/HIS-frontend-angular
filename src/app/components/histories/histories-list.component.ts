@@ -11,26 +11,15 @@ import { Location } from '@angular/common';
 })
 export class HistoriesListComponent implements OnInit {
     historiesList: Array<History>;
-    // users: Array<User>;
     patients: Array<User>;
 
-    constructor(private usersService: UsersRestService, private location: Location) { 
-        // this.historiesList=this.usersService.getHistoriesList();
-        // this.patients=this.usersService.getPatientsList();
-        // this.users=this.usersService.getUserList();
-       
-        // for (let history of this.historiesList) {
-        //     for (let user of this.users) {
-        //         if (history.userId===user.uid) {
-        //             this.patients.push(user);
-        //         }
-        //     }
-        // }
-
-    }
-    ngOnInit() {
+    constructor(private usersService: UsersRestService, private location: Location) {
         this.historiesList=this.usersService.getHistoriesList();
         this.patients=this.usersService.getPatientsList();
+     }
+
+    ngOnInit() {
+        
     }
     goBack(){
         this.location.back();
