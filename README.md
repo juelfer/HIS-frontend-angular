@@ -54,3 +54,4 @@ Simular la interacción con un backend mediante un servicio fake (mock)
     - /patient/:id  sólo puede ver su ficha
     - /history/:id  sólo puede ver su historial
 
+Para iniciar la aplicación, usar el comando ng-serve
